@@ -6,20 +6,20 @@ import { auth, logout } from '../firebase/config'
 import { query, collection, getFirestore, where, getDocs } from "firebase/firestore";
 import Sidebar from './common/Sidebar';
 
-import moment from "moment-timezone";
-import Datetime from "react-datetime";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
-import { Col, Row, Card, Form, Button, InputGroup } from '@themesberg/react-bootstrap';
+// import moment from "moment-timezone";
+// import Datetime from "react-datetime";
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
+// import {Logo} from '../assets/img'
 
-import {Logo} from '../assets/img'
+import { Col, Row, Card, Form, Button, InputGroup } from '@themesberg/react-bootstrap';
 import '../App.css'
 
 const Profile = () => {
     const [user, loading] = useAuthState(auth)
     const [userData, setUserData] = useState({} as any)
-    const [name, setName] = useState("" as any);
-    const [birthday, setBirthday] = useState("");
+    // const [name, setName] = useState("" as any);
+    // const [birthday, setBirthday] = useState("");
 
     const navigate = useNavigate()
 
@@ -59,9 +59,9 @@ const Profile = () => {
                 </Col>
 
                 <Col md={3}>
-                <h5 className="profile-basic-info">Thông tin cơ bản</h5>
-                <img src={userData.imgProfile} alt="" className='img-profile'/>
-                <span className='user-profile-name'>{userData.firstName} {userData.lastName}</span>
+                    <h5 className="profile-basic-info">Thông tin cơ bản</h5>
+                    <img src={userData.imgProfile} alt="" className='img-profile' />
+                    <span className='user-profile-name'>{userData.firstName} {userData.lastName}</span>
                 </Col>
 
                 <Col md={7}>
@@ -78,7 +78,7 @@ const Profile = () => {
                                     <Col md={6} className="mb-3">
                                         <Form.Group id="lastName">
                                             <Form.Label>Tên</Form.Label>
-                                            <Form.Control required type="text" placeholder={userData.lastName} disabled/>
+                                            <Form.Control required type="text" placeholder={userData.lastName} disabled />
                                         </Form.Group>
                                     </Col>
                                 </Row>
@@ -86,13 +86,13 @@ const Profile = () => {
                                     <Col md={6} className="mb-3">
                                         <Form.Group id="emal">
                                             <Form.Label>Ngày sinh</Form.Label>
-                                            <Form.Control required type="email" placeholder={userData.dateOfBirth} disabled/>
+                                            <Form.Control required type="email" placeholder={userData.dateOfBirth} disabled />
                                         </Form.Group>
                                     </Col>
                                     <Col md={6} className="mb-3">
                                         <Form.Group id="emal">
                                             <Form.Label>Số điện thoại</Form.Label>
-                                            <Form.Control required type="email" placeholder={userData.phone} disabled/>
+                                            <Form.Control required type="email" placeholder={userData.phone} disabled />
                                         </Form.Group>
                                     </Col>
                                 </Row>
@@ -100,7 +100,7 @@ const Profile = () => {
                                     <Col md={12} className="mb-3">
                                         <Form.Group id="emal">
                                             <Form.Label>Email</Form.Label>
-                                            <Form.Control required type="email" placeholder={userData.email} disabled/>
+                                            <Form.Control required type="email" placeholder={userData.email} disabled />
                                         </Form.Group>
                                     </Col>
                                 </Row>
@@ -109,7 +109,7 @@ const Profile = () => {
                                     <Col md={12} className="mb-3">
                                         <Form.Group id="emal">
                                             <Form.Label>Tên đăng nhập</Form.Label>
-                                            <Form.Control required type="email" placeholder={userData.loginName} disabled/>
+                                            <Form.Control required type="email" placeholder={userData.loginName} disabled />
                                         </Form.Group>
                                     </Col>
                                 </Row>
@@ -118,7 +118,7 @@ const Profile = () => {
                                     <Col md={6} className="mb-3">
                                         <Form.Group id="emal">
                                             <Form.Label>Phân quyền</Form.Label>
-                                            <Form.Control required type="email" placeholder={userData.role} disabled/>
+                                            <Form.Control required type="email" placeholder={userData.role} disabled />
                                         </Form.Group>
                                     </Col>
                                 </Row>

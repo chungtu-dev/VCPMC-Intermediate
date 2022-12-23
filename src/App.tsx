@@ -4,6 +4,7 @@ import Dashboard from "./component/Dashboard";
 // import Regist from "./component/Regist";
 // import Forms from "./component/common/Forms";
 import Profile from "./component/Profile";
+import Manage from "./component/Manage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           {/* <Route path="/dang-ki" element={<Regist />} /> */}
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/manage" element={<Manage />} />
         </Routes>
       </Router>
     </div>

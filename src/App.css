@@ -92,6 +92,89 @@
 }
 
 /* css for item of bootstrap */
-.ant-form-item-feedback-icon-error{
+.ant-form-item-feedback-icon-error,
+.ant-form-item-feedback-icon-success {
   margin: 0px 0 8px 0;
+}
+
+.sidebar-item-container {
+  margin: 50px 0 0 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.navbar-item {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+}
+
+.navbar-item span {
+  text-align: center;
+  font-size: 13px;
+}
+
+.navbar-item_icon {
+  font-size: 30px;
+  padding: 0 0 5px 0;
+}
+
+.navbar-item:hover {
+  background-color: #3E3E5B;
+  border-radius: 20px;
+}
+
+.manage-data-table {
+  width: 100%;
+  padding: 75px 0 0 0;
+}
+
+.manage-data-table-container {
+  background: #2F2F41;
+  padding: 12px;
+  border-radius: 16px;
+}
+
+.react-bootstrap-table table {
+  color: white;
+  border-color: #2F2F41;
+  border-bottom: 1px solid #727288;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd)>*, .table-hover>tbody>tr:hover>*, .table-bordered > :not(caption) > * > * {
+  color: white !important;
+  text-align: center
+}
+.selection-cell,
+.table thead th {
+  text-align: center;
+}
+
+.sortable .text-filter {
+  top: 12px;
+  position: absolute;
+  width: 420px;
+  left: 350px;
+  background: #2B2B3F;
+  border: none;
+}
+.react-bootstrap-table-pagination button, .react-bootstrap-table-pagination button:hover{
+  background-color: #2B2B3F;
+  color: white;
+  border-color: #FF7506;
+}
+.react-bs-table-sizePerPage-dropdown .dropdown-menu {
+  top: -200px;
+  position: absolute;
+}
+.react-bootstrap-table-pagination-list .page-link{
+  background: none;
+  color: #F5F5FF;
+  border: none;
+}
+.react-bootstrap-table-pagination-list .active>.page-link, .page-link.active, .react-bootstrap-table-pagination-list .page-link:hover{
+  background: rgba(255, 117, 6, 0.5);
+  border-radius: 50%;
+  color: white;
 }

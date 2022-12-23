@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth, logInWithEmailAndPassword } from '../firebase/config'
 import { Link, useNavigate } from 'react-router-dom'
-import { FiLogIn } from 'react-icons/fi'
+// import { FiLogIn } from 'react-icons/fi'
 import { Logo } from '../assets/img'
 
 function Login() {
@@ -18,6 +18,7 @@ function Login() {
     useEffect(() => {
         if (loading) { return; }
         if (user) navigate('/profile');
+        console.log('user', user);
     }, [user, loading])
 
     return (
@@ -66,9 +67,9 @@ function Login() {
                             {/* <FiLogIn className='icon__login_button' /> */}
                             <span>Đăng nhập</span></Button>
 
-                        <Button type="primary" className="login__button">
+                        {/* <Button type="primary" className="login__button">
                         <Link to="/dang-ki">Register</Link>
-                        </Button>
+                        </Button> */}
                     </Form.Item>
 
                 </Form>

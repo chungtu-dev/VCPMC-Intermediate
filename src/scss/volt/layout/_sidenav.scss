@@ -104,6 +104,8 @@
 	.sidebar-text{
 		display: block;
 		font-size: 12px;
+		top: 5px;
+		right: 3px;
 	}
 
 	@include media-breakpoint-up(md) {
