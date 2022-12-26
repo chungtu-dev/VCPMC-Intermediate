@@ -1,17 +1,17 @@
 import React from 'react'
 import Sidebar from './common/Sidebar'
 import { Col, Row, Container } from '@themesberg/react-bootstrap';
-import Table from './common/TableManage'
+import TableStorage from './common/TableStorage'
 import '../App.css'
 
-const Manage = () => {
+const Storage = () => {
     return (
         <>
             <Row>
                 <Col md={2}><Sidebar /></Col>
                 <Col md={10}>
-                    <Container className="manage-data-table">
-                        <Table />
+                    <Container className="storage-data-table">
+                        <TableStorage />
                     </Container>
                 </Col>
             </Row>
@@ -19,4 +19,4 @@ const Manage = () => {
     )
 }
 
-export default Manage
+export default Storage

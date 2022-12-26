@@ -142,10 +142,13 @@
   border-bottom: 1px solid #727288;
 }
 
-.table-striped>tbody>tr:nth-of-type(odd)>*, .table-hover>tbody>tr:hover>*, .table-bordered > :not(caption) > * > * {
+.table-striped>tbody>tr:nth-of-type(odd)>*,
+.table-hover>tbody>tr:hover>*,
+.table-bordered> :not(caption)>*>* {
   color: white !important;
   text-align: center
 }
+
 .selection-cell,
 .table thead th {
   text-align: center;
@@ -159,22 +162,36 @@
   background: #2B2B3F;
   border: none;
 }
-.react-bootstrap-table-pagination button, .react-bootstrap-table-pagination button:hover{
+
+.react-bootstrap-table-pagination button,
+.react-bootstrap-table-pagination button:hover {
   background-color: #2B2B3F;
   color: white;
   border-color: #FF7506;
 }
+
 .react-bs-table-sizePerPage-dropdown .dropdown-menu {
   top: -200px;
   position: absolute;
 }
-.react-bootstrap-table-pagination-list .page-link{
+
+.react-bootstrap-table-pagination-list .page-link {
   background: none;
   color: #F5F5FF;
   border: none;
+  margin: 0 6px;
 }
-.react-bootstrap-table-pagination-list .active>.page-link, .page-link.active, .react-bootstrap-table-pagination-list .page-link:hover{
+
+.react-bootstrap-table-pagination-list .active>.page-link,
+.page-link.active,
+.react-bootstrap-table-pagination-list .page-link:hover {
   background: rgba(255, 117, 6, 0.5);
   border-radius: 50%;
   color: white;
 }
+
+/* table storage */
+/* .storage-data-table .container{
+  padding: 0;
+  margin: 0;
+} */

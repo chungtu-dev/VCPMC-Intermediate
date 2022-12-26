@@ -5,6 +5,7 @@ import Dashboard from "./component/Dashboard";
 // import Forms from "./component/common/Forms";
 import Profile from "./component/Profile";
 import Manage from "./component/Manage";
+import Storage from "./component/Storage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/manage" element={<Manage />} />
+          <Route path="/storage" element={<Storage />} />
         </Routes>
       </Router>
     </div>
