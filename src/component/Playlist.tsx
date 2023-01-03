@@ -2,10 +2,10 @@ import React from 'react'
 import Sidebar from './common/Sidebar'
 import Topnav from './common/Topnav';
 import { Col, Row, Container } from '@themesberg/react-bootstrap';
-import TableStorage from './common/TableStorage'
+import TablePlaylist from './common/TablePlaylist';
 import '../App.css'
 
-const Storage = () => {
+const Playlist = () => {
     return (
         <>
             <Row>
@@ -14,8 +14,8 @@ const Storage = () => {
                     <Row className='header-nav'>
                         <Topnav />
                     </Row>
-                    <Container className="storage-data-table">
-                        <TableStorage />
+                    <Container className="tab-playlist">
+                        <TablePlaylist />
                     </Container>
                 </Col>
             </Row>
@@ -23,4 +23,4 @@ const Storage = () => {
     )
 }
 
-export default Storage
+export default Playlist

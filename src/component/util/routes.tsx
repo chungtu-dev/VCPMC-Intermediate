@@ -1,5 +1,6 @@
 
 export const Routes = {
+    Profile:{path: '/profile'},
     Storage:{path:'/storage'},
     Playlist:{path:'/playlist'},
     SetCalendar:{path:'/set-calendar'},

@@ -3,8 +3,9 @@ import React, { useState, useEffect } from 'react'
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { auth, logout } from '../firebase/config'
-import { query, collection, getFirestore, where, getDocs } from "firebase/firestore";
+import { collection, getFirestore, getDocs } from "firebase/firestore";
 import Sidebar from './common/Sidebar';
+import Topnav from './common/Topnav';
 
 // import moment from "moment-timezone";
 // import Datetime from "react-datetime";
@@ -12,7 +13,7 @@ import Sidebar from './common/Sidebar';
 // import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 // import {Logo} from '../assets/img'
 
-import { Col, Row, Card, Form, Button, InputGroup } from '@themesberg/react-bootstrap';
+import { Col, Row, Card, Form, Button } from '@themesberg/react-bootstrap';
 import '../App.css'
 
 const Profile = () => {
@@ -58,75 +59,84 @@ const Profile = () => {
                     <Sidebar />
                 </Col>
 
-                <Col md={3}>
-                    <h5 className="profile-basic-info">Thông tin cơ bản</h5>
-                    <img src={userData.imgProfile} alt="" className='img-profile' />
-                    <span className='user-profile-name'>{userData.firstName} {userData.lastName}</span>
+                <Col md={10}>
+                    <Row className='header-nav'>
+                        <Topnav/>
+                    </Row>
+
+                    <Row>
+                        <Col md={3}>
+                            <h5 className="profile-basic-info">Thông tin cơ bản</h5>
+                            <img src={userData.imgProfile} alt="" className='img-profile' />
+                            <span className='user-profile-name'>{userData.firstName} {userData.lastName}</span>
+                        </Col>
+
+                        <Col md={7}>
+                            <Card className="card-profile mb-4">
+                                <Card.Body>
+                                    <Form>
+                                        <Row>
+                                            <Col md={6} className="mb-3">
+                                                <Form.Group id="firstName">
+                                                    <Form.Label>Họ</Form.Label>
+                                                    <Form.Control required type="text" placeholder={userData.firstName} disabled />
+                                                </Form.Group>
+                                            </Col>
+                                            <Col md={6} className="mb-3">
+                                                <Form.Group id="lastName">
+                                                    <Form.Label>Tên</Form.Label>
+                                                    <Form.Control required type="text" placeholder={userData.lastName} disabled />
+                                                </Form.Group>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col md={6} className="mb-3">
+                                                <Form.Group id="emal">
+                                                    <Form.Label>Ngày sinh</Form.Label>
+                                                    <Form.Control required type="email" placeholder={userData.dateOfBirth} disabled />
+                                                </Form.Group>
+                                            </Col>
+                                            <Col md={6} className="mb-3">
+                                                <Form.Group id="emal">
+                                                    <Form.Label>Số điện thoại</Form.Label>
+                                                    <Form.Control required type="email" placeholder={userData.phone} disabled />
+                                                </Form.Group>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col md={12} className="mb-3">
+                                                <Form.Group id="emal">
+                                                    <Form.Label>Email</Form.Label>
+                                                    <Form.Control required type="email" placeholder={userData.email} disabled />
+                                                </Form.Group>
+                                            </Col>
+                                        </Row>
+
+                                        <Row>
+                                            <Col md={12} className="mb-3">
+                                                <Form.Group id="emal">
+                                                    <Form.Label>Tên đăng nhập</Form.Label>
+                                                    <Form.Control required type="email" placeholder={userData.loginName} disabled />
+                                                </Form.Group>
+                                            </Col>
+                                        </Row>
+
+                                        <Row>
+                                            <Col md={6} className="mb-3">
+                                                <Form.Group id="emal">
+                                                    <Form.Label>Phân quyền</Form.Label>
+                                                    <Form.Control required type="email" placeholder={userData.role} disabled />
+                                                </Form.Group>
+                                            </Col>
+                                        </Row>
+                                    </Form>
+                                    <Button onClick={logout}>Đăng xuất</Button>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    </Row>
                 </Col>
 
-                <Col md={7}>
-                    <Card className="card-profile mb-4">
-                        <Card.Body>
-                            <Form>
-                                <Row>
-                                    <Col md={6} className="mb-3">
-                                        <Form.Group id="firstName">
-                                            <Form.Label>Họ</Form.Label>
-                                            <Form.Control required type="text" placeholder={userData.firstName} disabled />
-                                        </Form.Group>
-                                    </Col>
-                                    <Col md={6} className="mb-3">
-                                        <Form.Group id="lastName">
-                                            <Form.Label>Tên</Form.Label>
-                                            <Form.Control required type="text" placeholder={userData.lastName} disabled />
-                                        </Form.Group>
-                                    </Col>
-                                </Row>
-                                <Row>
-                                    <Col md={6} className="mb-3">
-                                        <Form.Group id="emal">
-                                            <Form.Label>Ngày sinh</Form.Label>
-                                            <Form.Control required type="email" placeholder={userData.dateOfBirth} disabled />
-                                        </Form.Group>
-                                    </Col>
-                                    <Col md={6} className="mb-3">
-                                        <Form.Group id="emal">
-                                            <Form.Label>Số điện thoại</Form.Label>
-                                            <Form.Control required type="email" placeholder={userData.phone} disabled />
-                                        </Form.Group>
-                                    </Col>
-                                </Row>
-                                <Row>
-                                    <Col md={12} className="mb-3">
-                                        <Form.Group id="emal">
-                                            <Form.Label>Email</Form.Label>
-                                            <Form.Control required type="email" placeholder={userData.email} disabled />
-                                        </Form.Group>
-                                    </Col>
-                                </Row>
-
-                                <Row>
-                                    <Col md={12} className="mb-3">
-                                        <Form.Group id="emal">
-                                            <Form.Label>Tên đăng nhập</Form.Label>
-                                            <Form.Control required type="email" placeholder={userData.loginName} disabled />
-                                        </Form.Group>
-                                    </Col>
-                                </Row>
-
-                                <Row>
-                                    <Col md={6} className="mb-3">
-                                        <Form.Group id="emal">
-                                            <Form.Label>Phân quyền</Form.Label>
-                                            <Form.Control required type="email" placeholder={userData.role} disabled />
-                                        </Form.Group>
-                                    </Col>
-                                </Row>
-                            </Form>
-                            <Button onClick={logout}>Đăng xuất</Button>
-                        </Card.Body>
-                    </Card>
-                </Col>
             </Row>
         </>
     )

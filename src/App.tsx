@@ -6,6 +6,8 @@ import Dashboard from "./component/Dashboard";
 import Profile from "./component/Profile";
 import Manage from "./component/Manage";
 import Storage from "./component/Storage";
+import Setting from "./component/Setting";
+import Playlist from "./component/Playlist";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/manage" element={<Manage />} />
           <Route path="/storage" element={<Storage />} />
+          <Route path="/setting" element={<Setting />} />
+          <Route path="/playlist" element={<Playlist />} />
         </Routes>
       </Router>
     </div>

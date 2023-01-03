@@ -111,7 +111,7 @@ const service = {
 };
 
 const styles = {
-  container: { margin: 'auto', width: 'auto', padding: '100px 0 0 0' },
+  container: { margin: 'auto', width: 'auto', padding: '40px 0 0 0' },
 };
 
 const TableStorage = () => {
