@@ -8,6 +8,9 @@ import Manage from "./component/Manage";
 import Storage from "./component/Storage";
 import Setting from "./component/Setting";
 import Playlist from "./component/Playlist";
+import SetCalendar from "./component/SetCalendar";
+import Revenue from "./component/Revenue";
+import Support from "./component/Support";
 
 function App() {
   return (
@@ -22,6 +25,9 @@ function App() {
           <Route path="/storage" element={<Storage />} />
           <Route path="/setting" element={<Setting />} />
           <Route path="/playlist" element={<Playlist />} />
+          <Route path="/set-calendar" element={<SetCalendar />} />
+          <Route path="/revenue" element={<Revenue />} />
+          <Route path="/support" element={<Support />} />
         </Routes>
       </Router>
     </div>

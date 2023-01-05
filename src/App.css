@@ -70,6 +70,12 @@
   margin: 0px 0 10px 65px;
 }
 
+.card-body {
+  flex: 1 1 auto;
+  color: var(--bs-card-color);
+  padding: 0px 25px !important;
+}
+
 .profile-basic-info {
   color: #F5F5FF;
   margin: 30px 0 0px 70px;
@@ -258,7 +264,8 @@
 .MuiInputBase-root,
 .MuiInputBase-root .MuiInputBase-inputAdornedStart,
 .MuiInputBase-root .MuiTablePagination-select,
-.MuiTablePagination-selectIcon {
+.MuiTablePagination-selectIcon,
+.MuiPaper-root .MuiTypography-root {
   color: #FFFFFF !important
 }
 
@@ -310,6 +317,10 @@
   overflow: reveal;
 }
 
+.MuiDialogContent-root {
+  padding-top: 10px !important;
+}
+
 .MuiOutlinedInput-input,
 .MuiInputBase-input {
   color: #000 !important;
@@ -327,9 +338,10 @@
   ;
 }
 
-.header-nav_inside-info{
+.header-nav_inside-info {
   margin: 0 20px 0 0;
 }
+
 .header-nav_inside-info img {
   height: 70px;
   width: 70px;
@@ -337,8 +349,54 @@
   padding: 10px;
   border-radius: 50%;
 }
-.header-nav_inside-info span a{
+
+.header-nav_inside-info span a {
   color: white;
   flex-direction: column;
   display: inline-flex;
+}
+
+.storage_content {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+  padding: 10px;
+}
+
+.storage_content .storage_content-container {
+  margin: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.storage_content-card {
+  text-align: center;
+  padding: 30px 20px 0 20px !important;
+  background-color: #1f1f33 !important;
+}
+
+.storage_content-card .card {
+  align-items: center;
+}
+
+.storage_content-card .storage_content-card-body {
+  margin: 10px;
+}
+
+.storage_content-card .storage_content-card-img {
+  width: 120px;
+  height: 120px;
+  align-self: center;
+  margin: 10px;
+}
+
+.storage_content-card .storage_content-card-title {
+  color: white;
+  font-size: 13px;
+}
+
+.storage_content-card-body span {
+  padding: 5px 10px;
+  border: 1px solid #727288;
+  border-radius: 10px;
 }
