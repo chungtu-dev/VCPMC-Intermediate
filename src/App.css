@@ -400,3 +400,32 @@
   border: 1px solid #727288;
   border-radius: 10px;
 }
+
+/* revenue */
+.r-title{
+  color: white;
+  margin-left: 60px;
+}
+.r-container-chart, .r-container-items{
+  background-color: rgba(47, 47, 65, 0.7);
+  border-radius: 16px;
+  margin-top: 20px;
+  padding: 20px;
+}
+.r-container-items{
+  color: #fff;
+}
+.r-container-item > div{
+  border-right: 1px solid #fff;
+}
+.r-container-item_title{
+  color: #F5F5FF;
+  text-align: center;
+  font-size: 14px;
+}
+.r-container-item_subtitle{
+  color: #FFAC69;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+}
