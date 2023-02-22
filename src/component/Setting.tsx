@@ -1,7 +1,11 @@
 import React from 'react'
-import Sidebar from './common/Sidebar';
+import Sidebar from './common/Sidebar'
 import Topnav from './common/Topnav';
-import { Col, Row, Card, Form, Button } from '@themesberg/react-bootstrap';
+import { Col, Row, Container } from '@themesberg/react-bootstrap';
+import TableUser from './common/TableUser'
+import TableManage2 from './common/TableManage2'
+import Tab from 'react-bootstrap/Tab';
+import Tabs from 'react-bootstrap/Tabs';
 import '../App.css'
 
 const Setting = () => {
@@ -13,6 +17,25 @@ const Setting = () => {
           <Row className='header-nav'>
             <Topnav />
           </Row>
+          <Container className="tab-setting">
+            <Tabs
+              defaultActiveKey="home"
+              transition={false}
+              id="noanim-tab-example"
+              className="mb-3"
+            >
+              <Tab eventKey="home" title="Danh sách người dùng">
+                <Container className="manage-data-table">
+                  <TableUser />
+                </Container>
+              </Tab>
+              <Tab eventKey="profile" title="Vai trò người dùng">
+                <Container className="manage-tab-table2">
+                  <TableManage2 />
+                </Container>
+              </Tab>
+            </Tabs>
+          </Container>
         </Col>
       </Row>
     </>

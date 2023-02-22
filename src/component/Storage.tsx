@@ -6,6 +6,7 @@ import '../App.css'
 
 const Storage = () => {
     const [dataStore, setDataStore] = useState([])
+    // const [musicAPI, setMusicAPI] = useState([])
 
     const fetchingData = () => {
         fetch(`https://fakestoreapi.com/products`)
@@ -15,6 +16,15 @@ const Storage = () => {
                 setDataStore(response)
             })
     }
+
+    // const logAPI=()=>{
+    //     fetch('http://localhost:4400/episodes')
+    //     .then((response)=>response.json())
+    //     .then((response:any) => {
+    //         console.log(response);
+    //         setMusicAPI(response)
+    //     })
+    // }
 
     useEffect(() => {
         fetchingData()
